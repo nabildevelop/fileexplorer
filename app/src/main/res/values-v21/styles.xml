@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PopupThemeOrange" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:backgroundTint">@color/colorPrimaryOrange</item>
+    </style>
+
+    <style name="PopupThemePink" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:backgroundTint">@color/colorPrimaryPink</item>
+    </style>
+
+    <style name="PopupThemePurple" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:backgroundTint">@color/colorPrimaryPurple</item>
+    </style>
+
+    <style name="PopupThemeGreen" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:backgroundTint">@color/colorPrimaryGreen</item>
+    </style>
+</resources>

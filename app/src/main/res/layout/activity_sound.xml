@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical">
+            <TextView android:id="@+id/tx_time"
+                android:text="00:00  |  10:00"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"/>
+
+            <SeekBar
+                android:id="@+id/seek_bar_media"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@id/control_panel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1"
+                android:splitTrack="false"
+                android:thumb="@drawable/seek_bar_thumb"
+                android:background="@null"/>
+            <LinearLayout
+                android:id="@+id/control_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <ImageButton android:id="@+id/img_btn_previous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_skip_previous_black_24dp"/>
+                <ImageButton android:id="@+id/img_btn_play_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_pause_black_24dp"/>
+                <ImageButton android:id="@+id/img_btn_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_skip_next_black_24dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
+        android:layout_gravity="start|top"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+        app:backgroundTint="?attr/colorPrimary"
+        android:layout_margin="8dp"
+        android:tint="@android:color/white"/>
+    <TextView android:id="@+id/tx_song_name"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_gravity="top"
+        android:text="Song Name"
+        android:layout_marginStart="56dp"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:layout_marginLeft="56dp"
+        android:textColor="?attr/colorPrimary"
+        android:singleLine="true"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
