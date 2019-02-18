@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coord_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffffff">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffffff">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="?attr/colorPrimary"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:elevation="8dp"/>
+        <HorizontalScrollView
+            android:id="@+id/scroll_text_format"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#ffeaeaea"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:visibility="gone">
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layout_txt_format"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right">
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn_increase_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_font_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusedByDefault="false"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:text="18"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/btn_increase_font"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn_decrease_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/edit_font_size"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn_text_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/btn_decrease_font"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_format_color_text_black_24dp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn_text_italic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/btn_text_color"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_format_italic_black_24dp"
+                    tools:layout_editor_absoluteX="152dp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn_text_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/btn_text_italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_format_bold_black_24dp" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_typeface"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:entries="@array/typefaces"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/btn_text_bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </HorizontalScrollView>
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/scroll_text_format"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="top"
+            android:padding="6dp"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            android:scrollbars="vertical"
+            android:inputType="textMultiLine"
+            android:singleLine="false"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tx_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/scroll_text_format"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="top"
+            android:padding="8dp"
+            android:textIsSelectable="true"
+            android:textColor="@android:color/black"
+            android:scrollbars="vertical"/>
+    </android.support.constraint.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

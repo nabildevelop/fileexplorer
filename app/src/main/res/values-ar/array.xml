@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="themes_names">
+        <item>أخضر</item>
+        <item>برتقالي</item>
+        <item>وردي</item>
+        <item>بنفسجي</item>
+    </string-array>
+    <string-array name="sort_by_options">
+        <item>الإسم</item>
+        <item>الحجم</item>
+        <item>آخر تعديل</item>
+    </string-array>
+    <string-array name="file_view_names">
+        <item>قائمة</item>
+        <item>شبكة</item>
+        <item>شجرة</item>
+    </string-array>
+</resources>

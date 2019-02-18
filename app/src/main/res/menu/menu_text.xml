@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/edit" app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_edit_black_24dp"
+        app:iconTint="@android:color/white"
+        android:id="@+id/menu_item_edit"/>
+    <item android:title="@string/text_format" app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_text_format_black_24dp"
+        app:iconTint="@android:color/white"
+        android:id="@+id/menu_item_text_format" />
+    <item android:title="@string/settings" app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_settings_black_24dp"
+        app:iconTint="@android:color/white"
+        android:id="@+id/menu_item_settings"/>
+</menu>

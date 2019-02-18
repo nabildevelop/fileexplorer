@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_item_undo" android:title="@string/undo" app:showAsAction="always"
+        android:icon="@drawable/ic_undo_black_24dp" app:iconTint="@android:color/white"
+        android:autoMirrored="true"/>
+    <item android:id="@+id/menu_item_redo" android:title="@string/redo" app:showAsAction="always"
+        android:icon="@drawable/ic_redo_black_24dp" app:iconTint="@android:color/white"
+        android:autoMirrored="true"/>
+    <item android:id="@+id/menu_item_text_format" android:title="@string/text_format" app:showAsAction="always"
+        android:icon="@drawable/ic_text_format_black_24dp" app:iconTint="@android:color/white"/>
+    <item android:id="@+id/menu_item_save" android:title="@string/save" app:showAsAction="always"
+        android:icon="@drawable/ic_save_black_24dp" app:iconTint="@android:color/white"/>
+</menu>

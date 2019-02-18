@@ -2,40 +2,38 @@
 
     <!-- Base Application Theme -->
     <style name="BaseAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionModeOverlay">true</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14</item>
+        <!--<item name="colorOnSurface">#ffffffff</item>-->
+    </style>
+    <style name="AppThemeGreen" parent="BaseAppTheme">
+        <item name="colorPrimary">@color/colorPrimaryGreen</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkGreen</item>
+        <item name="colorSecondary">@color/colorAccentGreen</item>
     </style>
 
 
     <style name="AppThemeOrange" parent="BaseAppTheme">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimaryOrange</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkOrange</item>
-        <item name="colorAccent">@color/colorAccentOrange</item>
+        <item name="colorSecondary">@color/colorAccentOrange</item>
     </style>
-
     <style name="AppThemePink" parent="BaseAppTheme">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimaryPink</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkPink</item>
-        <item name="colorAccent">@color/colorAccentPink</item>
+        <item name="colorSecondary">@color/colorAccentPink</item>
     </style>
-
     <style name="AppThemePurple" parent="BaseAppTheme">
-        <!-- Customize your theme here. -->
+
         <item name="colorPrimary">@color/colorPrimaryPurple</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkPurple</item>
-        <item name="colorAccent">@color/colorAccentPurple</item>
+        <item name="colorSecondary">@color/colorAccentPurple</item>
     </style>
 
-    <style name="AppThemeGreen" parent="BaseAppTheme">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimaryGreen</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkGreen</item>
-        <item name="colorAccent">@color/colorAccentGreen</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14</item>
-    </style>
 
-    <style name="AppTheme.Appbar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+    <style name="AppTheme.Appbar" parent="ThemeOverlay.AppCompat.Dark"/>
+
+
+    <style name="PopupTheme" parent="ThemeOverlay.MaterialComponents.Light"/>
 
     <style name="PopupThemeOrange" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
         <item name="android:background">@color/colorPrimaryOrange</item>
@@ -49,6 +47,4 @@
     <style name="PopupThemeGreen" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
         <item name="android:background">@color/colorPrimaryGreen</item>
     </style>
-
-
 </resources>

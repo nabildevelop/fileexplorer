@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="themes_values">
+        <item>green</item>
+        <item>orange</item>
+        <item>pink</item>
+        <item>purple</item>
+    </string-array>
+    <string-array name="themes_names">
+        <item>Green</item>
+        <item>Orange</item>
+        <item>Pink</item>
+        <item>Purple</item>
+    </string-array>
+    <string-array name="typefaces">
+        <item>default</item>
+        <item>sans</item>
+        <item>serif</item>
+        <item>monospace</item>
+    </string-array>
+    <string-array name="sort_by_options">
+        <item>Name</item>
+        <item>Size</item>
+        <item>Last Modified</item>
+    </string-array>
+    <string-array name="file_view_values">
+        <item>list</item>
+        <item>grid</item>
+        <item>tree</item>
+    </string-array>
+    <string-array name="file_view_names">
+        <item>List</item>
+        <item>Grid</item>
+        <item>Tree</item>
+    </string-array>
+    <integer-array name="colors">
+        <item name="black">0xFF000000</item>
+        <item name="grey">0xFFA7A7A7</item>
+        <item name="dark_green">0xFF2E5933</item>
+        <item name="red">0xFFE91A07</item>
+        <item name="pink">0xFFED38DE</item>
+        <item name="sky_blue">0xFF1FE9FF</item>
+        <item name="dark_blue">0xFF001971</item>
+        <item name="yellow">0xFFE7C100</item>
+    </integer-array>
+</resources>

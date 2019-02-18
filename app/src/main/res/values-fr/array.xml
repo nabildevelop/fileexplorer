@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="themes_names">
+        <item>Vert</item>
+        <item>Orange</item>
+        <item>Rose</item>
+        <item>Violet</item>
+    </string-array>
+    <string-array name="sort_by_options">
+        <item>Nom</item>
+        <item>Taille</item>
+        <item>Dernier modifié</item>
+    </string-array>
+    <string-array name="file_view_names">
+        <item>Liste</item>
+        <item>Grille</item>
+        <item>Arbre</item>
+    </string-array>
+</resources>

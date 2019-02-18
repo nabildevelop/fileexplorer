@@ -2,60 +2,101 @@ package com.nabil.apps.fileexplorer.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nabil.apps.fileexplorer.AppConstants
 import com.nabil.apps.fileexplorer.FileHolder
-import com.nabil.apps.fileexplorer.GetPreviewAsyncTask
 import com.nabil.apps.fileexplorer.R
 import kotlinx.android.synthetic.main.item_file.view.*
-import java.lang.ref.WeakReference
 
-class FileAdapter(val context: Context, data  : Array<FileHolder>, private var sortBy: Int, private var showHidden: Boolean)
+class FileAdapter(val context: Context, data  : ArrayList<FileHolder>, sortBy: Int, showHidden: Boolean, var emptyView: View?)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-    val fetchingTasks =  ArrayList<GetPreviewAsyncTask>()
-    var handleItemClick: ((FileHolder)->Unit)? = null
-    var handleItemLongClick: ((FileHolder)->Unit)? = null
-    private var mData: Array<FileHolder>
+
+    var handleItemClick: ((FileHolder, Int)->Unit)? = null
+    var handleItemLongClick: ((FileHolder, Int)->Unit)? = null
+
+    val selectedCount get() = mData.count{it.selected}
+    val selectedItems get() = mData.filter{it.selected}
+
+
+    private val mData = mutableListOf<FileHolder>().apply{addAll(data)}
+
+    init{
+        sortData(sortBy)
+        if(!showHidden)
+            mData.retainAll{!it.file.isHidden}
+        checkEmpty()
+        registerAdapterDataObserver(object:RecyclerView.AdapterDataObserver(){
+            override fun onChanged() {
+                checkEmpty()
+            }
+        })
+    }
+
+    var data = data
+        set(value){
+            if(field!=value){
+                field=value
+                mData.clear()
+                mData.addAll(data)
+                if(!showHidden)
+                    mData.retainAll{!it.file.isHidden}
+                sortData(sortBy)
+                notifyDataSetChanged()
+            }
+        }
+
+
+
+    var sortBy = sortBy
+        set(value) {
+            if(field!=value){
+                field=value
+                sortData(value)
+                notifyDataSetChanged()
+            }
+        }
+
+    var showHidden = showHidden
+        set(value) {
+            if(field!=value){
+                field=value
+                mData.clear()
+                if(value)
+                    mData.addAll(data)
+                else
+                    mData.addAll(data.filter{!it.file.isHidden})
+                sortData(sortBy)
+                notifyDataSetChanged()
+            }
+        }
 
     override fun getItemCount() = mData.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val fileHolder = mData[holder.adapterPosition]
-        holder.itemView.tx_file_name.text = mData[holder.adapterPosition].file.name
+        holder.itemView.tx_file_name.text = fileHolder.file.name
+        holder.itemView.view_edge.visibility=if(fileHolder.selected) View.VISIBLE else View.GONE
+        holder.itemView.img_selected_check.visibility=if(fileHolder.selected) View.VISIBLE else View.GONE
         if(fileHolder.isDirectory)
             holder.itemView.img_icon.setImageResource(R.drawable.ic_folder_yellow_24dp)
         else
             fileHolder.preview?.let{holder.itemView.img_icon.setImageBitmap(it)}?:holder.itemView.img_icon.setImageResource(fileHolder.type.iconId)
 
         // fetch and display preview if available
-        if(fileHolder.type.previewable && fileHolder.preview==null && fetchingTasks.none{it.fileHolder==fileHolder}){
-            val task = GetPreviewAsyncTask(WeakReference(context), fileHolder){
-                fileHolder.preview = it
-                notifyItemChanged(holder.adapterPosition)
-            }
-            task.execute()
-            fetchingTasks.add(task)
-        }
+
 
         // handle click events
         holder.itemView.setOnClickListener{
-            handleItemClick?.invoke(mData[holder.adapterPosition])
+            handleItemClick?.invoke(fileHolder, holder.adapterPosition)
         }
         holder.itemView.setOnLongClickListener{
-            handleItemLongClick?.invoke(mData[holder.adapterPosition])
+            handleItemLongClick?.invoke(fileHolder, holder.adapterPosition)
             true
         }
     }
 
-
-    init {
-        mData = data
-        sortData(sortBy)
-        if(!showHidden){
-            mData.filter{!it.file.isHidden}
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
             object: RecyclerView.ViewHolder(LayoutInflater.from(parent.context).
@@ -70,11 +111,13 @@ class FileAdapter(val context: Context, data  : Array<FileHolder>, private var s
         mData.sortWith(AppConstants.foldersFirstComparator)
     }
 
-
-    fun sort(sortBy: Int){
-        this.sortBy = sortBy
-        sortData(sortBy)
+    fun unselectAll(){
+        mData.filter{it.selected}.forEach{it.selected=false}
         notifyDataSetChanged()
+    }
+
+    fun checkEmpty(){
+        emptyView?.visibility = if(mData.isEmpty())View.VISIBLE else View.GONE
     }
 
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menu_item_new_file"
+        android:icon="@drawable/ic_insert_drive_file_black_24dp"
+        android:title="@string/new_file"
+        app:iconTint="@android:color/white"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_new_folder"
+        android:icon="@drawable/ic_create_new_folder_black_24dp"
+        android:title="@string/new_folder"
+        app:iconTint="@android:color/white"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_sort"
+        android:icon="@drawable/ic_sort_black_24dp"
+        android:title="@string/sort"
+        app:iconTint="@android:color/white"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_show_hidden_files"
+        android:title="@string/show_hidden_files"
+        android:checkable="true"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_item_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/settings"
+        app:iconTint="@android:color/white"
+        app:showAsAction="never" />
+</menu>

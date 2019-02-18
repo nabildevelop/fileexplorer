@@ -12,7 +12,7 @@
         <item name="android:backgroundTint">@color/colorPrimaryPurple</item>
     </style>
 
-    <style name="PopupThemeGreen" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+    <style name="PopupThemeGreen" parent="ThemeOverlay.AppCompat.Dark">
         <item name="android:backgroundTint">@color/colorPrimaryGreen</item>
     </style>
 </resources>

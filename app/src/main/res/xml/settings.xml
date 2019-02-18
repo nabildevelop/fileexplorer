@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="@string/pref_key_theme"
+        android:title="@string/app_theme"
+        android:dialogTitle="@string/choose_application_theme"
+        android:entryValues="@array/themes_values"
+        android:entries="@array/themes_names"
+        android:defaultValue="green"/>
+    <ListPreference
+        android:key="@string/pref_key_file_view"
+        android:title="@string/file_view"
+        android:dialogTitle="@string/file_view"
+        android:entryValues="@array/file_view_values"
+        android:entries="@array/file_view_names"
+        android:defaultValue="green"/>
+</PreferenceScreen>

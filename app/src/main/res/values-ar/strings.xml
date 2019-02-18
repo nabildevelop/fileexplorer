@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">متصفح الملفات</string>
+    <string name="settings">الإعدادات</string>
+    <string name="choose_application_theme">اختر نمط التطبيق</string>
+    <string name="choose_text_color">اختر لون النص</string>
+    <string name="enter_folder_name">أدخل إسم المجلد</string>
+    <string name="new_folder">مجلد جديد</string>
+    <string name="create_folder">إنشاء المجلد</string>
+    <string name="undo">إلغاء</string>
+    <string name="redo">إعادة</string>
+    <string name="save">حفظ</string>
+    <string name="text_format">شكل النص</string>
+    <string name="edit">تعديل</string>
+    <string name="changes_saved">تم حفظ التغييرات</string>
+    <string name="app_theme">نمط التطبيق</string>
+    <string name="new_file">ملف جديد</string>
+    <string name="enter_file_name">أدخل إسم الملف</string>
+    <string name="create_file">إنشاء الملف</string>
+    <string name="folder_created">تم إنشاء المجلد</string>
+    <string name="file_created">تم إنشاء الملف</string>
+    <string name="provide_valid__name">يرجى إدخال إسم صحيح</string>
+    <string name="couldnt_open_file">تعذر فتح الملف</string>
+    <string name="sort">ترتيب</string>
+    <string name="sort_by">ترتيب حسب</string>
+    <string name="search">بحث</string>
+    <string name="show_hidden_files">عرض الملفات المخفية</string>
+    <string name="selected">محدد(ة)</string>
+    <string name="delete">حذف</string>
+    <string name="file_view">عرض الملفات</string>
+    <string name="empty_folder">هذا المجلد فارغ</string>
+    <string name="confirm_delete">هل تريد حقا حذف الملفات المحددة؟</string>
+    <string name="files_deleted">تم حذف الملفات</string>
+    <string name="send_files">إرسال ملفات</string>
+    <string name="file_details">تفاصيل الملف</string>
+    <string name="file_name">الإسم</string>
+    <string name="file_path">المسار</string>
+    <string name="file_type">النوع</string>
+    <string name="last_modified">آخر تعديل</string>
+    <string name="file_size">الحجم</string>
+    <string name="share">مشاركة</string>
+    <string name="cut">قص</string>
+    <string name="copy">نسخ</string>
+    <string name="paste">لصق</string>
+    <string name="rename">إعادة تسمية</string>
+</resources>
